@@ -1,0 +1,28 @@
+name: CDKTF Build and Test
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build-and-test:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build container
+        run: make build
+
+      - name: Start container in dev mode
+        run: make dev
+
+      - name: Run tests
+        run: make test
+
+      - name: Run synth
+        run: make synth

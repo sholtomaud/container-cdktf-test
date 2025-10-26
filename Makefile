@@ -1,7 +1,11 @@
 # Makefile for OpenTofu/CDKTF Container Management using macOS 'container' CLI
 
 # --- Configuration Variables ---
+ifdef CI
+CONTAINER_CLI = docker
+else
 CONTAINER_CLI = container
+endif
 CONTAINER_NAME = opentofu-site-container
 IMAGE_NAME = opentofu-cdktf-site
 DOCKERFILE = Dockerfile
