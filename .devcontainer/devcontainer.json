@@ -1,0 +1,26 @@
+{
+  "name": "OpenTofu CDKTF Dev",
+  "build": {
+    "dockerfile": "../Dockerfile",
+    "context": "..",
+    "args": {
+      "NODEVER": "24"
+    }
+  },
+  "workspaceFolder": "/usr/src/app",
+  "workspaceMount": "source=${localWorkspaceFolder}/app,target=/usr/src/app,type=bind",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "hashicorp.terraform",
+        "dbaeumer.vscode-eslint"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      }
+    }
+  },
+  "forwardPorts": [3000],
+  "postCreateCommand": "npm install",
+  "remoteUser": "root"
+}

@@ -1,0 +1,24 @@
+{
+  "name": "cdktf-opentofu-stack",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "main.ts",
+  "types": "main.ts",
+  "scripts": {
+    "get": "cdktf get",
+    "synth": "cdktf synth",
+    "deploy": "cdktf deploy",
+    "destroy": "cdktf destroy"
+  },
+  "dependencies": {
+    "cdktf": "^0.21.0",
+    "constructs": "^10.0.0",
+    "@cdktf/provider-local": "11.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.0",
+    "typescript": "^5.4.0",
+    "ts-node": "^10.9.2"
+  }
+}
